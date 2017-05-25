@@ -53,6 +53,14 @@ class Kilroy(QtGui.QMainWindow):
             self.simulate_pump = False
         else:
             self.simulate_pump = parameters.get("simulate_pump")
+
+        if not "cnc" in parameters.parameters:
+            self.usb_cnc = False
+        else:
+            self.usb_cnc = True if isinstance(parameters.get("cnc"), bool) else parameters.get("cnc").split(",")
+
+        if "simulate_cnc" in parameters.parameters and parameters.get("simulate_cnc"):
+            self.usb_cnc = "simulated"
             
         # Define additional internal attributes
         self.received_message = None
@@ -60,6 +68,7 @@ class Kilroy(QtGui.QMainWindow):
         # Create ValveChain instance
         self.valveChain = ValveChain(com_port = self.valve_com_port,
                                      num_simulated_valves = self.num_simulated_valves,
+                                     usb_cnc = self.usb_cnc,
                                      verbose = self.verbose)
 
         # Create PumpControl instance
