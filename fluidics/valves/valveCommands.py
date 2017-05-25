@@ -97,7 +97,7 @@ class ValveCommands(QtGui.QMainWindow):
         try:
             return self.commands[command_ID]
         except:
-            print "Invalvid command index: " + command_ID
+            print "Invalid command index: " + command_ID
             return [-1]*self.num_valves # return default
 
     # ------------------------------------------------------------------------------------
@@ -174,12 +174,14 @@ class ValveCommands(QtGui.QMainWindow):
         self.num_valves = int(self.kilroy_configuration.get("num_valves"))
         if not (self.num_valves>0):
             print "Number of valves not specified"
-        
+
+        self.cnc = bool(self.kilroy_configuration.get("cnc", False))
+
         # Load commands
         for valve_command in self.kilroy_configuration.findall("valve_commands"):
             command_list = valve_command.findall("valve_cmd")
             for command in command_list:
-                new_command = [-1]*self.num_valves # make copy to initialize config with default
+                new_command = [-1]*(self.num_valves + self.cnc) # make copy to initialize config with default
                 for valve_pos in command.findall("valve_pos"):
                     valve_ID = int(valve_pos.get("valve_ID")) - 1
                     port_ID = int(valve_pos.get("port_ID")) - 1
@@ -187,6 +189,12 @@ class ValveCommands(QtGui.QMainWindow):
                         new_command[valve_ID] = port_ID
                     else:
                         print "Valve out of range on command: " + command.get("name")
+
+                for cnc_pos in command.findall("cnc_pos"):
+                    valve_ID = self.num_valves
+                    port_ID = int(cnc_pos.get("port_ID")) - 1
+                    plate_ID = cnc_pos.get("plate_ID")
+                    new_command[valve_ID] = (plate_ID, port_ID)
 
                 # Add command
                 self.commands.append(new_command)
@@ -207,6 +215,14 @@ class ValveCommands(QtGui.QMainWindow):
                 textString = "    " + "Valve " + str(valve_ID + 1)
                 if port_ID >= 0:
                     textString += " configured to port " + str(port_ID+1)
+                else:
+                    textString += " configured to not change"
+
+            if self.cnc:
+                plate_ID, port_ID = self.commands[command_ID][self.num_valves]
+                textString = "    " + "Valve " + str(valve_ID + 1)
+                if port_ID >= 0:
+                    textString += " configured to port " + str(port_ID+1) + ", Plate " + str(plate_ID)
                 else:
                     textString += " configured to not change"
 
@@ -242,10 +258,20 @@ class ValveCommands(QtGui.QMainWindow):
         text_string = current_command_name + "\n"
         for valve_ID, port_ID in enumerate(current_command):
             text_string += "Valve " + str(valve_ID+1)
+
+            if isinstance(port_ID, tuple):
+                plate_ID, port_ID = port_ID
+            else:
+                plate_ID = None
+
             if port_ID == -1:
                 text_string += ": No Change "
             else:
                 text_string += ": Port " + str(port_ID+1)
+
+            if plate_ID is not None:
+                text_string += " on Plate %s" % plate_ID
+
             text_string += "\n"
 
         self.currentCommandLabel.setText(text_string)

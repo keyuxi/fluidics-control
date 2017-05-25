@@ -17,6 +17,8 @@ from PyQt4 import QtCore, QtGui
 from qtValveControl import QtValveControl
 from hamilton import HamiltonMVP
 
+from cnc_talk import CNC, MockCNC
+
 # ----------------------------------------------------------------------------------------
 # ValveChain Class Definition
 # ----------------------------------------------------------------------------------------
@@ -25,6 +27,7 @@ class ValveChain(QtGui.QWidget):
                  parent = None,
                  com_port = 2,
                  num_simulated_valves = 0,
+                 usb_cnc = False,
                  verbose = False
                  ):
 
@@ -46,6 +49,16 @@ class ValveChain(QtGui.QWidget):
             self.valve_chain = HamiltonMVP(com_port = self.com_port,
                                            verbose = self.verbose)
 
+        if usb_cnc:
+            if isinstance(usb_cnc, tuple) or isinstance(usb_cnc, list):
+                self.cnc = CNC(usb_cnc[0], usb_cnc[1])
+            elif usb_cnc == "simulated":
+                self.cnc = MockCNC()
+            else:
+                self.cnc = CNC()
+        else:
+            self.cnc = None
+
         # Create QtValveControl widgets for each valve in the chain
         self.num_valves = self.valve_chain.howManyValves()
         self.valve_names = []
@@ -64,9 +77,16 @@ class ValveChain(QtGui.QWidget):
     # Change specified valve position
     # ------------------------------------------------------------------------------------
     def changeValvePosition(self, valve_ID, port_ID = None):
-        if port_ID == None:
-            port_ID = self.valve_widgets[valve_ID].getPortIndex()
-        rotation_direction = self.valve_widgets[valve_ID].getDesiredRotationIndex()
+        print "Valve", valve_ID, "and port", port_ID
+
+        if valve_ID >= 0 and valve_ID < self.num_valves:
+            if port_ID == None:
+                port_ID = self.valve_widgets[valve_ID].getPortIndex()
+            rotation_direction = self.valve_widgets[valve_ID].getDesiredRotationIndex()
+        else:
+            if port_ID == None:
+                port_ID = self.valve_widgets[-1].getPortIndex()
+            rotation_direction = self.valve_widgets[-1].getDesiredRotationIndex()
 
         if self.verbose:
             text_string = "Changing Valve " + str(valve_ID)
@@ -74,9 +94,17 @@ class ValveChain(QtGui.QWidget):
             text_string += " Direction " + str(rotation_direction)
             print text_string 
         
-        self.valve_chain.changePort(valve_ID = valve_ID,
+        if valve_ID >= 0 and valve_ID < self.num_valves:
+            if port_ID == None:
+                port_ID = self.valve_widgets[valve_ID].getPortIndex()
+            rotation_direction = self.valve_widgets[valve_ID].getDesiredRotationIndex()
+
+            self.valve_chain.changePort(valve_ID = valve_ID,
                                     port_ID = port_ID,
                                     direction = rotation_direction)
+        else:
+            self.cnc.move(port_ID, direction = rotation_direction)
+
         # Update valve display
         self.pollValveStatus()
 
@@ -84,8 +112,11 @@ class ValveChain(QtGui.QWidget):
     # Close class
     # ------------------------------------------------------------------------------------
     def close(self):
-        if self.verbose: "Print closing valve chain"
+        if self.verbose: print "Closing valve chain"
         self.valve_chain.close()
+        if self.cnc is not None:
+            print "Closing USB CNC"
+            self.cnc.close()
 
     # ------------------------------------------------------------------------------------
     # Create the Qt widgets for display
@@ -112,6 +143,21 @@ class ValveChain(QtGui.QWidget):
 
             self.valveChainGroupBoxLayout.addWidget(valve_widget)
 
+        if self.cnc is not None:
+            cnc_widget = QtValveControl(self, ID = -2)
+            cnc_widget.setValveName("CNC") # Valve names are +1 valve IDs
+            cnc_widget.setValveConfiguration(self.cnc.get_configuration())
+            cnc_widget.setPortNames(self.cnc.get_wells())
+            cnc_widget.setRotationDirections(self.cnc.get_plates())
+            cnc_widget.setStatus(self.cnc.get_status())
+            self.valve_names.append("CNC")
+
+            cnc_widget.change_port_signal.connect(self.changeValvePosition)
+
+            self.valve_widgets.append(cnc_widget)
+
+            self.valveChainGroupBoxLayout.addWidget(cnc_widget)
+
         self.valveChainGroupBoxLayout.addStretch(1)
 
         # Define main widget
@@ -128,7 +174,7 @@ class ValveChain(QtGui.QWidget):
     # Determine number of valves
     # ------------------------------------------------------------------------------------
     def howManyValves(self):
-        return self.valve_chain.howManyValves
+        return self.valve_chain.howManyValves + (self.cnc is not None)
 
     # ------------------------------------------------------------------------------------
     # Update valve status display with the current status each valve in the chain
@@ -136,6 +182,8 @@ class ValveChain(QtGui.QWidget):
     def pollValveStatus(self):
         for valve_ID in range(self.num_valves):
             self.valve_widgets[valve_ID].setStatus(self.valve_chain.getStatus(valve_ID))
+        if self.cnc is not None:
+            self.valve_widgets[-1].setStatus(self.cnc.get_status())
 
     # ------------------------------------------------------------------------------------
     # Change port status based on external command
@@ -150,6 +198,8 @@ class ValveChain(QtGui.QWidget):
     # ------------------------------------------------------------------------------------          
     def reinitializeChain(self):
         self.valve_chain.resetChain()
+        #if self.cnc is not None:
+        #    self.cnc.reset()
 
     # ------------------------------------------------------------------------------------
     # Set enabled status for display items
@@ -157,6 +207,8 @@ class ValveChain(QtGui.QWidget):
     def setEnabled(self, is_enabled):
         for valve_ID in range(self.num_valves):
             self.valve_widgets[valve_ID].setEnabled(is_enabled)
+        if self.cnc is not None:
+            self.valve_widgets[-1].setEnabled(is_enabled)
     
 # ----------------------------------------------------------------------------------------
 # Stand Alone Test Class
