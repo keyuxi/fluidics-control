@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <settings><!-- simulate kilroy settings -->
   <!-- Valve parameters -->
-  <valves_com_port type="string">/dev/ttyUSB0</valves_com_port>	<!-- (PYTHON notation x-1) COM port of serial connection to valves -->  
+  <valves_com_port type="int">3</valves_com_port>	<!-- (PYTHON notation x-1) COM port of serial connection to valves -->  
   <num_valves type="int">1</num_valves><!-- Number of valves to simulate (Defaults to 0) -->
   <cnc type="boolean">True</cnc><!-- Look for a CNC -->
 
   <!-- Pump parameters -->
   <!-- <pump_class type="string">pumps.rainin_rp1</pump_class> -->
   <pump_class type="string">pumps.gilson_mp3</pump_class>
-  <pump_com_port type="string">/dev/ttyUSB1</pump_com_port> <!--  (PYTHON notation x-1) COM port of serial connection to pump -->
+  <pump_com_port type="int">2</pump_com_port> <!--  (PYTHON notation x-1) COM port of serial connection to pump -->
   <pump_ID type="int">30</pump_ID> <!-- ID of Pump -->
   <simulate_pump type="boolean">False</simulate_pump><!-- Simulate pump? (Defaults to False) -->
   <flip_flow_direction type="boolean">False</flip_flow_direction><!-- Flip the direction defined as forward? -->

@@ -17,7 +17,7 @@ class MockCNC(object):
         self.plate_shape = plate_shape
         self.status = ("Initializing", True)
         self.wells = []
-        self.restore_config("/home/nasa/fluidics-control/fluidics/valves/VWR_Plate_Lid.json")
+        self.restore_config(r"C:\Users\Nasa\Desktop\code\fluidics-control\fluidics\valves\VWR_Plate_Lid.json")
 
     def step_through(self, positions):
         position = list(self.coords())
@@ -104,7 +104,7 @@ class CNC(MockCNC):
             self.send(cnc_commands.cmd_init_8())
             self.send(cnc_commands.cmd_init_9())
             self.send(cnc_commands.cmd_init_10())
-            self.restore_config("/home/nasa/fluidics-control/fluidics/valves/VWR_Plate_Lid.json")
+            self.restore_config(r"C:\Users\Nasa\Desktop\code\fluidics-control\fluidics\valves\VWR_Plate_Lid.json")
         else:
             raise Exception, "Can't find device with vendor %0d and product %0d!" % (idVendor, idProduct)
 
