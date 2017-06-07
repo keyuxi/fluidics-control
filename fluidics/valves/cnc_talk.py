@@ -4,11 +4,46 @@ import time
 import sys
 import numpy
 import json
+import math
 
 import matplotlib.mlab
 import matplotlib.tri
 
 import cnc_commands
+
+def calculate_distance(start, end):
+    dist = 0
+    if start[0] is not None and end[0] is not None:
+        dist += (start[0] - end[0])**2
+    if start[1] is not None and end[1] is not None:
+        dist += (start[1] - end[1])**2
+    if start[2] is not None and end[2] is not None:
+        dist += (start[2] - end[2])**2
+    return math.sqrt(dist)
+
+def max_distance_fix(positions, max_distance=1000):
+    out_positions = []
+    current_position = list(positions[0])
+
+    for end in positions[1:]:
+        d = calculate_distance(current_position, end)
+
+        if d > max_distance:
+            parts = int(math.ceil(d/max_distance))
+            delta = [x - y for x, y in zip(end, current_position)]
+            for p in range(parts):
+                out_positions.append([c + d * (p+1)/float(parts) for d, c in zip(delta, current_position)])
+        else:
+            out_positions.append(end)
+
+        if end[0] is not None:
+            current_position[0] = end[0]
+        if end[1] is not None:
+            current_position[1] = end[1]
+        if end[2] is not None:
+            current_position[2] = end[2]
+
+    return out_positions
 
 class MockCNC(object):
     def __init__(self, plates=2, plate_shape=(12, 8)):
@@ -21,14 +56,8 @@ class MockCNC(object):
 
     def step_through(self, positions):
         position = list(self.coords())
-        for p in positions:
-            if p[0] is not None:
-                position[0] = p[0]
-            if p[1] is not None:
-                position[1] = p[1]
-            if p[2] is not None:
-                position[2] = p[2]
-            self.set(position)
+        for p in max_distance_fix([position] + positions):
+            self.set(p)
 
     def coords(self, add_offset=True):
         print "MockCNC queried for position = ", self.position
