@@ -10,6 +10,46 @@ import matplotlib.tri
 
 import cnc_commands
 
+
+# .
+# ^
+# SyntaxError: invalid syntax
+# >>>
+# >>> c
+# <__main__.CNC object at 0x0000000002C28438>
+# >>> c.set((1300, 900, 0))
+# (1300.0, 900.0, 0.0)
+# >>> c.plates[0]
+# <__main__.Plate object at 0x00000000045D98D0>
+# >>> c.plates[0].height
+# -60.0
+# >>> c.plates[0].record_height()
+# >>> c.plates[0].height
+# 0.0
+# >>> p = Plate(c)
+# >>> p
+# <__main__.Plate object at 0x00000000045D9828>
+# >>> p.record_well()
+# >>>  c.set((1300, 900, 0))
+# File "<stdin>", line 1
+ # c.set((1300, 900, 0))
+
+# IndentationError: unexpected indent
+# >>> c.coords()
+# (1300.0, 900.0, 0.0)
+# >>> c.set((1300, 900, -60))
+# (1300.0, 900.0, -60.0)
+# >>> p.record_height()
+# >>> p.move()
+# >>> p.home()
+# >>> c.register_plate(p)
+# >>> c.write(
+
+
+
+
+
+
 class MockCNC(object):
     def __init__(self, plates=2, plate_shape=(12, 8)):
         self.position = [0, 0, 0]
@@ -18,6 +58,7 @@ class MockCNC(object):
         self.status = ("Initializing", True)
         self.wells = []
         self.restore_config(r"./valves/VWR_Plate_Lid.json")
+
 
     def step_through(self, positions):
         position = list(self.coords())
@@ -87,7 +128,10 @@ class MockCNC(object):
 class CNC(MockCNC):
     def __init__(self, idVendor=0x2121, idProduct=0x2130, configuration=(0,0)):
         self.status = ("Initializing", False)
-        self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
+        # self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
+        import usb.backend.libusb0
+        backend = usb.backend.libusb0.get_backend(find_library=lambda x: r'C:\Users\Scope1\usb_driver\amd64\libusb0.dll')
+        self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=backend)
         if self.dev:
             self.dev.set_configuration()
             self.cfg = self.dev.get_active_configuration()
@@ -105,6 +149,7 @@ class CNC(MockCNC):
             self.send(cnc_commands.cmd_init_9())
             self.send(cnc_commands.cmd_init_10())
             self.restore_config(r"./valves/VWR_Plate_Lid.json")
+
         else:
             raise Exception, "Can't find device with vendor %0d and product %0d!" % (idVendor, idProduct)
 
