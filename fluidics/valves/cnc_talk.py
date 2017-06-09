@@ -65,7 +65,7 @@ def max_distance_fix(positions, max_distance=1000):
 
         if d > max_distance:
             parts = int(math.ceil(d/max_distance))
-            delta = [x - y for x, y in zip(end, current_position)]
+            delta = [x - y if x is not None and y is not None else 0 for x, y in zip(end, current_position)]
             for p in range(parts):
                 out_positions.append([c + d * (p+1)/float(parts) for d, c in zip(delta, current_position)])
         else:
