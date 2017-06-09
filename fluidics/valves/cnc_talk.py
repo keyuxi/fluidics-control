@@ -193,7 +193,12 @@ class CNC(MockCNC):
 
     def set(self, position = (0, 0, 0)):
         current_position = self.coords()
-
+        
+        print current_position
+        print position
+        if position[0] is None:
+            position = (0,0,0)
+        print position
         self.send(cnc_commands.cmd_set_offset(current_position[0]-position[0], current_position[1]-position[1], current_position[2]-position[2]))
         self.wait()
 
