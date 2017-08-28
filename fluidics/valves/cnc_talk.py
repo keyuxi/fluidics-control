@@ -195,7 +195,7 @@ class CNC(MockCNC):
         current_position = self.coords()
         
         if position[0] is None:
-            position = (current_position[0],current_position[1],-60)
+            position = (current_position[0],current_position[1],-180) # changed -60 to -180
         print position
         self.send(cnc_commands.cmd_set_offset(current_position[0]-position[0], current_position[1]-position[1], current_position[2]-position[2]))
         self.wait()
