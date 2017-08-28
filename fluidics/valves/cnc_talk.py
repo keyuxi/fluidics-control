@@ -155,7 +155,7 @@ class CNC(MockCNC):
         self.status = ("Initializing", False)
         # self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
         import usb.backend.libusb0
-        backend = usb.backend.libusb0.get_backend(find_library=lambda x: r'C:\Users\Scope1\usb_driver\amd64\libusb0.dll')
+        backend = usb.backend.libusb0.get_backend(find_library=lambda x: r'./windows_dll/libusb0.dll')
         self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=backend)
         if self.dev:
             self.dev.set_configuration()
