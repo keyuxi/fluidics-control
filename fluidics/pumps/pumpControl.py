@@ -27,7 +27,7 @@ class PumpControl(QtGui.QWidget):
         QtGui.QWidget.__init__(self, parent)
 
         # Define internal attributes
-        self.com_port = parameters.get("pump_com_port")
+        #self.com_port = parameters.get("pump_com_port")
         self.pump_ID = parameters.get("pump_id", 30)
         self.simulate = parameters.get("simulate_pump", True)
         self.verbose = parameters.get("verbose", True)

@@ -14,7 +14,7 @@
 # ----------------------------------------------------------------------------------------
 import sys
 from PyQt4 import QtCore, QtGui
-from ui_layouts.ui_qt_valve import QtValveControlWidget
+from valves.ui_layouts.ui_qt_valve import QtValveControlWidget
 
 # ----------------------------------------------------------------------------------------
 # QtValveControl Class Definition
@@ -210,8 +210,8 @@ class StandAlone(QtGui.QMainWindow):
     # Detect custom signal
     # ------------------------------------------------------------------------------------    
     def detectEmittedSignal(self, valve_ID):
-        print "Detected signal from valve index: " + str(valve_ID)
-        print "Found port index: " + str(self.valve_widgets[valve_ID].getPortIndex())
+        print("Detected signal from valve index: " + str(valve_ID))
+        print("Found port index: " + str(self.valve_widgets[valve_ID].getPortIndex()))
 
 # ----------------------------------------------------------------------------------------
 # Test/Demo of Classs

@@ -33,10 +33,10 @@ class Kilroy(QtGui.QMainWindow):
 
         # Parse parameters into internal attributes
         self.verbose = parameters.get("verbose")
-        self.valve_com_port = parameters.get("valves_com_port")
+        self.valve_com_port = parameters.get("valves_com_port", default=-1)
         self.tcp_port = parameters.get("tcp_port")
-        self.pump_com_port = parameters.get("pump_com_port")
-        self.pump_ID = parameters.get("pump_ID")
+        self.pump_com_port = parameters.get("pump_com_port", default=-1)
+        self.pump_ID = parameters.get("pump_ID", default="")
         if not "num_simulated_valves" in parameters.parameters:
             self.num_simulated_valves = 0
         else:
@@ -101,7 +101,7 @@ class Kilroy(QtGui.QMainWindow):
         self.tcpServer.close()
         self.valveChain.close()
         self.pumpControl.close()
-        print "\nKilroy was here!"
+        print("\nKilroy was here!")
 
     # ----------------------------------------------------------------------------------------
     # Create master GUI
@@ -167,7 +167,7 @@ class Kilroy(QtGui.QMainWindow):
         elif command_data[0] == "pump":
             self.pumpControl.receiveCommand(command_data[1])
         else:
-            print "Received command of unknown type: " + str(command_data[0])
+            print("Received command of unknown type: " + str(command_data[0]))
 
 # ----------------------------------------------------------------------------------------
 # Stand Alone Kilroy Class

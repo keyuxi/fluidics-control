@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings><!-- simulate kilroy settings -->
+  <!-- Valve parameters -->
+  <valves_com_port type="int">0</valves_com_port>	<!-- (PYTHON notation x-1) COM port of serial connection to valves -->  
+  <num_valves type="int">1</num_valves><!-- Number of valves to simulate (Defaults to 0) -->
+  <cnc type="string">XYZ</cnc><!-- Look for a CNC -->
+
+  <!-- General Kilroy parameters -->
+  <verbose type="boolean">False</verbose>
+  <serial_verbose type="boolean">False</serial_verbose>  <!-- display serial commands? -->
+  <tcp_port type="int">9500</tcp_port> <!-- TCP/IP port for local communication with Dave -->
+  <protocols_file type = "">default_config.xml</protocols_file><!-- Location of default protocol -->
+  <commands_file type = "">default_config.xml</commands_file><!-- Location of default commands -->
+
+</settings>

@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<kilroy_configuration num_valves = "1" cnc = "True" num_pumps = "1">
+
+  <valve_commands>
+  </valve_commands>
+
+  <pump_commands>
+     <pump_cmd name = "0.3 mL/min">
+       <pump_config speed = "20.00" direction = "Forward"></pump_config>
+     </pump_cmd>
+      <pump_cmd name = "0.6 mL/min">
+       <pump_config speed = "40.00" direction = "Forward"></pump_config>
+     </pump_cmd>
+     <pump_cmd name = "Stop Flow">
+       <pump_config speed = "0.0"></pump_config>
+     </pump_cmd>
+  </pump_commands>
+
+  <kilroy_protocols>
+
+     <protocol name = "Flow Imaging Buffer">
+        <pump duration = "48">0.6 mL/min</pump>
+	    <pump duration = "100">Stop Flow</pump>
+     </protocol>    
+ 
+     <protocol name = "Flow Wash Buffer">
+	    <pump duration = "4">Stop Flow</pump>
+        <pump duration = "120">0.6 mL/min</pump>
+	    <pump duration = "10">Stop Flow</pump>
+     </protocol>  
+         
+    <protocol name = "Bleaching">
+	    <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+	    <pump duration = "100">Stop Flow</pump>
+    </protocol>
+
+    <protocol name = "Hybridize 1">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 2">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 3">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 4">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 5">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 6">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 7">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 8">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 9">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 10">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 11">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 12">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 13">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 14">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 15">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 16">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 17">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 18">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 19">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 20">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 21">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 22">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 23">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 24">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 25">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 26">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 27">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 28">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 29">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 30">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 31">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 32">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 33">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 34">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 35">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 36">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 37">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 38">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 39">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 40">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 41">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 42">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 43">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 44">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 45">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 46">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 47">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 48">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 49">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 50">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 51">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 52">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 53">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 54">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 55">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 56">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 57">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 58">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 59">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 60">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 61">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 62">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 63">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 64">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 65">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 66">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 67">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 68">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 69">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 70">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 71">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 72">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 73">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 74">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 75">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 76">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 77">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 78">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 79">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 80">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 81">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 82">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 83">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 84">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 85">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 86">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 87">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 88">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 89">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 90">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 91">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 92">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 93">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 94">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 95">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 96">
+        <pump duration = "4">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "900">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <pump duration = "48">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+
+     <protocol name = "Test">
+        <pump duration = "1">0.6 mL/min</pump>
+	    <pump duration = "10">Stop Flow</pump>
+     </protocol>
+
+   </kilroy_protocols>
+
+</kilroy_configuration>

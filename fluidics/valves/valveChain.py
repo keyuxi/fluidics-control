@@ -14,10 +14,12 @@
 # ----------------------------------------------------------------------------------------
 import sys
 from PyQt4 import QtCore, QtGui
-from qtValveControl import QtValveControl
-from hamilton import HamiltonMVP
+from valves.qtValveControl import QtValveControl
+from valves.hamilton import HamiltonMVP
 
-from cnc_talk import CNC, MockCNC
+from valves.autopicker import MockAutopicker
+from valves.autopicker_cnc import CNC
+from valves.autopicker_xyz import XYZ
 
 # ----------------------------------------------------------------------------------------
 # ValveChain Class Definition
@@ -40,9 +42,9 @@ class ValveChain(QtGui.QWidget):
         self.poll_time = 2000
 
         # Create instance of Hamilton class
-        if num_simulated_valves > 0:
-            print 'simulating valves'
-            self.valve_chain = HamiltonMVP(com_port = 0,
+        if self.com_port < 0 or num_simulated_valves > 0:
+            print('simulating valves')
+            self.valve_chain = HamiltonMVP(com_port = -1,
                                            num_simulated_valves = num_simulated_valves,
                                            verbose = self.verbose)
         else:
@@ -53,7 +55,9 @@ class ValveChain(QtGui.QWidget):
             if isinstance(usb_cnc, tuple) or isinstance(usb_cnc, list):
                 self.cnc = CNC(usb_cnc[0], usb_cnc[1])
             elif usb_cnc == "simulated":
-                self.cnc = MockCNC()
+                self.cnc = MockAutopicker()
+            elif usb_cnc == "XYZ":
+                self.cnc = XYZ()
             else:
                 self.cnc = CNC()
         else:
@@ -77,7 +81,7 @@ class ValveChain(QtGui.QWidget):
     # Change specified valve position
     # ------------------------------------------------------------------------------------
     def changeValvePosition(self, valve_ID, port_ID = None):
-        print "Valve", valve_ID, "and port", port_ID
+        print("Valve", valve_ID, "and port", port_ID)
 
         if valve_ID >= 0 and valve_ID < self.num_valves:
             if port_ID == None:
@@ -92,7 +96,7 @@ class ValveChain(QtGui.QWidget):
             text_string = "Changing Valve " + str(valve_ID)
             text_string += " Port " + str(port_ID)
             text_string += " Direction " + str(rotation_direction)
-            print text_string 
+            print(text_string )
         
         if valve_ID >= 0 and valve_ID < self.num_valves:
             if port_ID == None:
@@ -112,10 +116,10 @@ class ValveChain(QtGui.QWidget):
     # Close class
     # ------------------------------------------------------------------------------------
     def close(self):
-        if self.verbose: print "Closing valve chain"
+        if self.verbose: print("Closing valve chain")
         self.valve_chain.close()
         if self.cnc is not None:
-            print "Closing USB CNC"
+            print("Closing USB CNC")
             self.cnc.close()
 
     # ------------------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings><!-- simulate kilroy settings -->
+  <!-- Pump parameters -->
+  <pump_class type="string">pumps.pololu_tic</pump_class> <!--  pumps.gilson_mp3 Control class for pump -->
+  <pump_com_port type="int">0</pump_com_port>
+  <pump_ID type="string"></pump_ID>
+  <flip_flow_direction type="boolean">False</flip_flow_direction><!-- Flip the direction defined as forward? -->
+  
+  <!-- General Kilroy parameters -->
+  <verbose type="boolean">False</verbose>
+  <tcp_port type="int">9500</tcp_port> <!-- TCP/IP port for local communication with Dave -->
+  <protocols_file type = "">default_config.xml</protocols_file><!-- Location of default protocol -->
+  <commands_file type = "">default_config.xml</commands_file><!-- Location of default commands -->
+
+</settings>

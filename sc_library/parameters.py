@@ -247,6 +247,9 @@ def hardware(hardware_file):
 
     return hardware
 
+class ParameterException(Exception):
+    pass
+
 ## parameters
 #
 # Parses a parameters file to create a parameters object.
