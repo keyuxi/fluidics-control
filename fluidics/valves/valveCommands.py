@@ -31,6 +31,7 @@ class ValveCommands(QtGui.QMainWindow):
 
         # Initialize internal attributes
         self.verbose = verbose
+        #self.verbose=False
         self.file_name = xml_file_path
         self.command_names = []
         self.commands = []
@@ -219,6 +220,8 @@ class ValveCommands(QtGui.QMainWindow):
                     textString += " configured to not change"
 
             if self.cnc:
+                #print(self.commands)
+                print(self.commands[command_ID][self.num_valves])
                 plate_ID, port_ID = self.commands[command_ID][self.num_valves]
                 textString = "    " + "Valve " + str(valve_ID + 1)
                 if port_ID >= 0:

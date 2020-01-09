@@ -31,8 +31,8 @@ class KilroyProtocols(QtGui.QMainWindow):
     completed_protocol_signal = QtCore.pyqtSignal(object) # Name of completed protocol
         
     def __init__(self,
-                 protocol_xml_path = "default_config.xml",
-                 command_xml_path = "default_config.xml",
+                 protocol_xml_path = "yuxi_config.xml",
+                 command_xml_path = "yuxi_config.xml",
                  verbose = False):
         super(KilroyProtocols, self).__init__()
 

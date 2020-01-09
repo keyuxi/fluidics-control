@@ -26,6 +26,7 @@ class APump():
 
         # Define attributes
         self.com_port = parameters.get("pump_com_port", 3)
+        self.com_port = "COM{}".format(self.com_port)
         self.pump_ID = parameters.get("pump_ID", 30)
         self.verbose = parameters.get("verbose", True)
         self.simulate = parameters.get("simulate_pump", True)
@@ -77,7 +78,8 @@ class APump():
         control = {"K": "Keypad", "R": "Remote"}.get(message[-1], "Unknown")
 
         auto_start = "Disabled"
-
+        #print("\n\n====\n\n")
+        #print(message)
         speed = float(message[1:len(message) - 1])
 
         return (status, speed, direction, control, auto_start, "No Error")
@@ -105,6 +107,8 @@ class APump():
     def startFlow(self, speed, direction = "Forward"):
         self.setSpeed(speed)
         self.setFlowDirection(direction == "Forward")
+        message = self.sendImmediate(self.pump_ID, 'K')
+        #print("starting flow > %\n\n{}".format(message))
 
     def stopFlow(self):
         self.setSpeed(0.0)
@@ -150,7 +154,7 @@ class APump():
         self.serial.write(string)
 
     def getResponse(self):
-        return self.serial.read()
+        return self.serial.readline()# changed from serial.read() to readline(). -Yuxi 20190725
 
 
 
