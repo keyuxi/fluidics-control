@@ -18,9 +18,9 @@ import sys
 import os
 import time
 from PyQt4 import QtCore, QtGui
-from valves.valveChain import ValveChain
-from pumps.pumpControl import PumpControl
-from kilroyProtocols import KilroyProtocols
+from .valves.valveChain import ValveChain
+from .pumps.pumpControl import PumpControl
+from .kilroyProtocols import KilroyProtocols
 from sc_library.tcpServer import TCPServer
 import sc_library.parameters as params
 
@@ -101,7 +101,7 @@ class Kilroy(QtGui.QMainWindow):
         self.tcpServer.close()
         self.valveChain.close()
         self.pumpControl.close()
-        print "\nKilroy was here!"
+        print("\nKilroy was here!")
 
     # ----------------------------------------------------------------------------------------
     # Create master GUI
@@ -167,7 +167,7 @@ class Kilroy(QtGui.QMainWindow):
         elif command_data[0] == "pump":
             self.pumpControl.receiveCommand(command_data[1])
         else:
-            print "Received command of unknown type: " + str(command_data[0])
+            print("Received command of unknown type: " + str(command_data[0]))
 
 # ----------------------------------------------------------------------------------------
 # Stand Alone Kilroy Class
